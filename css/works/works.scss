@@ -1,0 +1,21 @@
+* {
+  box-sizing: border-box;
+}
+@import "breakpoints/base";
+
+@media (min-width: 1280px) {
+  @import "breakpoints/1280up";
+}
+@media (max-width: 1280px) {
+  @import "breakpoints/1280down";
+}
+@media (max-width: 960px) {
+  @import "breakpoints/960up";
+}
+@media (max-width: 600px) {
+  @import "breakpoints/600up";
+}
+
+@media (max-width: 480px) {
+  @import "breakpoints/480up";
+}

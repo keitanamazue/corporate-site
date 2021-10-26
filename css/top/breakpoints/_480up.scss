@@ -1,0 +1,74 @@
+/******************************************************************
+
+Stylesheet: 480px以上(スマホの横向き)のモニタで適用
+
+******************************************************************/
+
+///news//////
+.news {
+  &__articles {
+    padding: 20px 20px;
+  }
+}
+
+///news//////
+
+//concept
+
+.concept {
+  &__messages > h2 {
+    font-size: 24px;
+  }
+
+  &__messages {
+    margin-top: -200px;
+  }
+
+  &__message {
+    padding: 10px 35px;
+    width: 300px;
+  }
+}
+
+///works
+
+.work {
+  &__slider {
+    padding: 0px 0px;
+  }
+  & .slider-right-arrow {
+    top: 17%;
+  }
+
+  & .slider-left-arrow {
+    top: 17%;
+  }
+
+  &__desc {
+    margin-top: 30px;
+  }
+
+  &__contents {
+    padding: 30px 30px;
+  }
+
+  &__category {
+    margin: 5px 0;
+  }
+
+  &__title {
+    margin-top: 18px;
+  }
+}
+
+///footer
+
+.footer {
+  &__contact {
+    flex-direction: column;
+  }
+
+  &__mail {
+    margin-bottom: 5px;
+  }
+}

@@ -1,0 +1,561 @@
+/******************************************************************
+
+Stylesheet: ベーススタイル
+
+******************************************************************/
+
+.title {
+  background-color: black;
+
+  & > img {
+    width: 150px;
+  }
+}
+
+.btn {
+  display: inline-block;
+  width: 150px;
+  max-width: 100%;
+  padding: 10px 5px;
+  border: 2px solid transparent;
+  font-size: 0.75em;
+  text-align: center;
+  text-decoration: none;
+  transition: 0.25s;
+  background-color: black;
+  color: white;
+  cursor: pointer;
+}
+
+.btn-blue {
+  background-color: #1399d8;
+}
+
+.btn-reverse {
+  background-color: transparent;
+  border: 2px solid white;
+}
+
+.btn:focus,
+.btn:hover {
+  background-color: #fff;
+  color: black;
+  border-color: currentColor;
+}
+
+.btn-blue:focus,
+.btn-blue:hover {
+  background-color: white;
+  color: #1399d8;
+}
+
+.btn-arrow-right {
+  position: relative;
+  padding-right: 2em;
+  padding-left: 1.38em;
+}
+
+.btn-arrow-right::after {
+  content: "\f061";
+  position: absolute;
+  top: 50%;
+  right: 0.83em;
+  font-weight: 900;
+  font-family: "Font Awesome 5 Free";
+  transform: translateY(-50%);
+}
+
+.btn-position-change {
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.btn-position-right-bottom {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.btn-xxl {
+  width: 180px;
+  padding: 10px 5px;
+}
+
+.btn-xl {
+  width: 240px;
+  padding: 20px 5px;
+}
+
+.content {
+  padding: 50px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.description {
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.subtitle {
+  font-size: 22px;
+  letter-spacing: 0.7em;
+  text-align: center;
+  padding: 0 45px;
+}
+
+.customer-title {
+  font-size: 24px;
+  font-weight: bold;
+  position: relative;
+  display: inline-block;
+
+  &::after {
+    content: "";
+    width: 70px;
+    height: 2px;
+    background-color: black;
+    display: block;
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+////ハンバーガー
+.mobile-menu__btn {
+  background-color: unset;
+  border: none;
+  outline: none !important;
+  cursor: pointer;
+
+  & > span {
+    background-color: black;
+    width: 35px;
+    height: 2px;
+    display: block;
+    margin-bottom: 9px;
+    transition: transform 0.7s;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+////ハンバーガー/////
+
+#container {
+  position: relative;
+  z-index: 2;
+  transition: all 0.5s;
+}
+
+////モバイルメニューデフォルト////
+.mobile-menu {
+  position: fixed;
+  right: 0;
+  top: 60px;
+  width: 300px;
+  &__main {
+    padding: 0;
+    perspective: 2000px;
+    transform-style: preserve-3d;
+  }
+  &__item {
+    list-style: none;
+    display: block;
+    transform: translate3d(0, 0, -1000px);
+    padding: 0 40px;
+    transition: transform 0.3s, opacity 0.2s;
+    opacity: 0;
+  }
+  &__link {
+    display: block;
+    margin-top: 30px;
+    color: black;
+    text-decoration: none;
+  }
+
+  &__cover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 1s;
+    cursor: pointer;
+    z-index: 100;
+  }
+}
+////モバイルメニューデフォルト////
+
+/////モバイルメニュー開いた時////////
+.menu-open {
+  & #container {
+    transform: translate(-300px, 60px);
+    box-shadow: 0 8px 40px -10px rgba(0, 0, 0, 0.8);
+  }
+
+  & .mobile-menu {
+    &__item {
+      transform: none;
+      opacity: 1;
+
+      @for $i from 1 through 10 {
+        &:nth-child(#{$i}) {
+          transition-delay: $i * 0.07s;
+        }
+      }
+    }
+    &__btn {
+      & > span {
+        background-color: black;
+
+        &:nth-child(1) {
+          transition-delay: 70ms;
+          transform: translateY(11px) rotate(135deg);
+        }
+        &:nth-child(2) {
+          transition-delay: 0s;
+          transform: translateX(-18px) scaleX(0);
+        }
+        &:nth-child(3) {
+          transition-delay: 140ms;
+          transform: translateY(-11px) rotate(-135deg);
+        }
+      }
+    }
+
+    &__cover {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+}
+
+/////モバイルメニュー開いた時////////
+
+/* ==============================================================================================================================
+     header
+  ==============================================================================================================================
+  */
+
+.header {
+  padding: 25px 30px;
+  position: relative;
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__logo {
+    background-color: black;
+    & .logo__img {
+      width: 250px;
+    }
+  }
+
+  &__nav {
+    margin-left: 70px;
+  }
+
+  &__ul {
+    display: flex;
+    align-items: center;
+    list-style: none;
+  }
+
+  &__li {
+    padding-left: 20px;
+    padding-right: 20px;
+
+    & > a {
+      text-decoration: none;
+      color: black;
+      font-size: 14px;
+      font-weight: bold;
+
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+  }
+
+  &__li:not(:last-child) {
+    border-right: 1px solid;
+  }
+
+  &__sns {
+    margin-top: -5px;
+    margin-right: 160px;
+
+    & > a:hover {
+      opacity: 0.8;
+    }
+  }
+
+  &__contact {
+    position: absolute;
+    right: 0;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+    padding: 14px 20px;
+    text-decoration: none;
+
+    & > img {
+      margin-top: 3px;
+    }
+
+    & > p {
+      color: white;
+      font-size: 12px;
+      font-weight: bold;
+    }
+  }
+
+  .mobile-menu__btn {
+    display: none;
+  }
+}
+
+/* ==============================================================================================================================
+     header
+  ==============================================================================================================================
+  */
+
+/* ==============================================================================================================================
+     customer
+  ==============================================================================================================================
+  */
+
+/* ==============================================================================================================================
+     underlayer-top
+  ==============================================================================================================================
+  */
+
+.underlayer-top {
+  height: 64vh;
+  position: relative;
+
+  &__img {
+    background-image: url("../../images/underlayer-top.png");
+    position: absolute;
+    width: 77.55%;
+    padding-top: 64vh;
+    right: 2%;
+    z-index: 1;
+    background-size: cover;
+    background-position: 100%;
+  }
+
+  &__title {
+    font-weight: bold;
+    z-index: 5;
+    position: absolute;
+    left: 6.1%;
+    top: 15vh;
+    font-size: 200%;
+    letter-spacing: 0.15em;
+    display: block;
+
+    &::after {
+      content: "CUSTOMER";
+      font-size: 40%;
+      display: block;
+      position: relative;
+      bottom: -10px;
+      left: 0;
+      color: #00a559;
+    }
+  }
+}
+
+/* ==============================================================================================================================
+     underlayer-top
+  ==============================================================================================================================
+  */
+
+.customer {
+  width: 80%;
+  max-width: 1100px;
+  margin-right: auto;
+  margin-left: auto;
+
+  &__item {
+    margin-top: 50px;
+  }
+
+  &__contents {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+  }
+
+  &__img {
+    width: 50%;
+
+    & > img {
+      width: 100%;
+    }
+  }
+
+  & .check-lists {
+    width: 50%;
+    list-style: none;
+  }
+
+  & .check-list {
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+
+    & > img {
+      width: 25px;
+      height: 25px;
+      margin-right: 10px;
+    }
+  }
+
+  & .customer-desc {
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: justify;
+    margin-top: 50px;
+    line-height: 1.7em;
+  }
+}
+
+/* ==============================================================================================================================
+     customer
+  ==============================================================================================================================
+  */
+
+/* ==============================================================================================================================
+     footer
+  ==============================================================================================================================
+  */
+
+.footer {
+  display: flex;
+
+  &__info {
+    width: 50%;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding-left: 13%;
+  }
+
+  &__contact {
+    display: flex;
+  }
+
+  &__mail {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    width: 180px;
+    margin-right: 10px;
+
+    & > img {
+      width: 16px;
+      height: 16px;
+      margin-right: 10px;
+    }
+
+    & > p {
+      font-size: 12px;
+      font-weight: bold;
+      letter-spacing: 0.1em;
+    }
+  }
+
+  &__call {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    width: 180px;
+
+    & > img {
+      width: 16px;
+      height: 16px;
+      margin-right: 10px;
+    }
+
+    & > p {
+      font-size: 12px;
+      font-weight: bold;
+      letter-spacing: 0.1em;
+    }
+  }
+
+  &__logo {
+    margin-top: 40px;
+    & .logo__img {
+      width: 280px;
+    }
+  }
+
+  &__desc {
+    color: white;
+    font-size: 12px;
+    letter-spacing: 0.05em;
+    line-height: 1.8em;
+  }
+
+  &__page {
+    display: flex;
+    align-items: center;
+    margin-top: 40px;
+    & > a {
+      color: white;
+      text-decoration: none;
+      font-size: 10px;
+      padding-right: 8px;
+    }
+
+    & > p {
+      color: gray;
+      font-size: 8px;
+      padding-right: 8px;
+    }
+  }
+
+  &__copyright {
+    color: white;
+    font-size: 10px;
+    margin-top: 40px;
+  }
+
+  &__map {
+    width: 50%;
+
+    & .google_map {
+      width: 100%;
+    }
+  }
+}
+
+/* ==============================================================================================================================
+     footer
+  ==============================================================================================================================
+  */

@@ -1,0 +1,96 @@
+/******************************************************************
+
+Stylesheet: 600px以下のタブレットやモニタで適用
+
+******************************************************************/
+
+.title > img {
+  width: 120px;
+}
+
+///header
+
+.header {
+  & .logo__img {
+    width: 150px;
+  }
+}
+
+//header
+
+// news//@at-root
+
+.news {
+  &__article {
+    padding: 10px 0;
+  }
+
+  &__desc {
+    width: 190px;
+  }
+}
+//news///
+
+//concept
+
+.concept {
+  &__messages > h2 {
+    font-size: 24px;
+  }
+
+  &__img {
+    width: 100%;
+  }
+
+  &__messages {
+    margin-top: -250px;
+  }
+
+  &__message {
+    padding: 20px 40px;
+    width: 400px;
+  }
+}
+
+///works
+
+.work {
+  &__slider {
+    padding: 20px 30px;
+  }
+  & .slider-right-arrow {
+    top: 23%;
+  }
+
+  & .slider-left-arrow {
+    top: 23%;
+  }
+}
+
+///footer
+
+.footer {
+  flex-direction: column-reverse;
+
+  &__info {
+    width: 100%;
+    align-items: center;
+    padding: 25px;
+  }
+
+  &__contact {
+    flex-direction: row;
+  }
+
+  &__mail {
+    margin-bottom: 0;
+  }
+
+  &__map {
+    width: 100%;
+
+    & .google_map {
+      width: 100%;
+    }
+  }
+}

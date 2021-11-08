@@ -316,12 +316,8 @@ Stylesheet: ベーススタイル
           align-items: center;
 }
 
-.header__logo {
-  background-color: black;
-}
-
 .header__logo .logo__img {
-  width: 250px;
+  width: 450px;
 }
 
 .header__nav {
@@ -949,7 +945,7 @@ Stylesheet: ベーススタイル
 }
 
 .footer__logo .logo__img {
-  width: 280px;
+  width: 100px;
 }
 
 .footer__desc {
@@ -1119,9 +1115,6 @@ Stylesheet: 1280px以上のモニタで適用
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-  }
-  .header__logo {
-    background-color: black;
   }
   .header__logo .logo__img {
     width: 250px;
@@ -1656,7 +1649,7 @@ Stylesheet: 1280px以上のモニタで適用
     margin-top: 40px;
   }
   .footer__logo .logo__img {
-    width: 280px;
+    width: 100px;
   }
   .footer__desc {
     color: white;

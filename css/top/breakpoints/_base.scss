@@ -239,9 +239,8 @@ Stylesheet: ベーススタイル
   }
 
   &__logo {
-    background-color: black;
     & .logo__img {
-      width: 250px;
+      width: 450px;
     }
   }
 
@@ -764,7 +763,7 @@ Stylesheet: ベーススタイル
   &__logo {
     margin-top: 40px;
     & .logo__img {
-      width: 280px;
+      width: 100px;
     }
   }
 

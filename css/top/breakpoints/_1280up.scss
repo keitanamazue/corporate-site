@@ -120,7 +120,6 @@ Stylesheet: 1280px以上のモニタで適用
   }
 
   &__logo {
-    background-color: black;
     & .logo__img {
       width: 250px;
     }
@@ -634,7 +633,7 @@ Stylesheet: 1280px以上のモニタで適用
   &__logo {
     margin-top: 40px;
     & .logo__img {
-      width: 280px;
+      width: 100px;
     }
   }
 
